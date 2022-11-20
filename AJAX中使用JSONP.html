@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      $(() => { // 发起jsonp的请求
+        $.ajax({
+          url: 'http://ajax.frontend.itheima.net:3006/api/jsonp?name=zs&age=18',
+          dataType: 'jsonp',
+          // 发送到服务端的参数名称，默认就是callback
+          // jsonp: 'callback',
+          // 自定义回调函数的名称，默认值是jqueryxxx随机的名称
+          // jsonpCallback:'acb',
+          success: (res) => {
+            console.log(res)
+          }
+        })
+      })
+    </script>
+  </body>
+</html>
